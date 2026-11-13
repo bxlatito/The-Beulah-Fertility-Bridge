@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Submissions{% endblock %}
+{% block head %}<meta http-equiv="refresh" content="30">{% endblock %}
+{% block content %}
+<h1>Submissions</h1>
+<div class="stats">
+  <div class="stat"><b>{{ stats.new }}</b><span>New</span></div>
+  <div class="stat"><b>{{ stats.total }}</b><span>All submissions</span></div>
+  {% for k, n in stats.by_kind.items() %}<div class="stat"><b>{{ n }}</b><span>{{ k|capitalize }}</span></div>{% endfor %}
+</div>
+<div class="panel">
+  <form class="filters" method="get" action="/admin">
+    <div><label for="q">Search</label><input id="q" name="q" value="{{ filters.q }}" placeholder="Name, email, text"></div>
+    <div><label for="type">Type</label>
+      <select id="type" name="type"><option value="">All</option>
+      {% for k in kinds %}<option value="{{ k }}" {{ 'selected' if filters.type == k }}>{{ k|capitalize }}</option>{% endfor %}</select></div>
+    <div><label for="status">Status</label>
+      <select id="status" name="status"><option value="">All</option>
+      {% for s in statuses %}<option value="{{ s }}" {{ 'selected' if filters.status == s }}>{{ s|capitalize }}</option>{% endfor %}</select></div>
+    <div><label for="date_from">From</label><input id="date_from" type="date" name="date_from" value="{{ filters.date_from }}"></div>
+    <div><label for="date_to">To</label><input id="date_to" type="date" name="date_to" value="{{ filters.date_to }}"></div>
+    <div style="display:flex;gap:.5rem"><button type="submit">Apply filters</button><a class="btn secondary" href="/admin">Clear</a></div>
+  </form>
+  {% if items %}
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Received</th><th>Type</th><th>From</th><th class="hide">About</th><th>Status</th></tr></thead>
+    <tbody>
+    {% for i in items %}
+      <tr>
+        <td>{{ i.created_at.strftime('%d %b %Y %H:%M') }}</td>
+        <td>{{ i.kind|capitalize }}</td>
+        <td><a href="/admin/s/{{ i.id }}">{{ i.name or 'Anonymous' }}</a><br><small>{{ i.email or '' }}</small></td>
+        <td class="preview hide">{{ i.preview }}</td>
+        <td><span class="badge s-{{ i.status }}">{{ i.status|capitalize }}</span></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% else %}
+  <p>No submissions match these filters.</p>
+  {% endif %}
+  <div class="pager">
+    <span>{{ total }} result{{ '' if total == 1 else 's' }} · page {{ page }} of {{ pages }}</span>
+    <span class="actions" style="margin:0">
+      {% if page > 1 %}<a class="btn secondary" href="/admin?{{ base_qs }}&page={{ page - 1 }}">Previous</a>{% endif %}
+      {% if page < pages %}<a class="btn secondary" href="/admin?{{ base_qs }}&page={{ page + 1 }}">Next</a>{% endif %}
+      <a class="btn" href="{{ export_url }}">Export CSV</a>
+    </span>
+  </div>
+</div>
+{% endblock %}

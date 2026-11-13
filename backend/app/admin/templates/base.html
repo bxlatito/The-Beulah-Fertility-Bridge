@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{% block title %}Admin{% endblock %} · BFBF</title>
+{% block head %}{% endblock %}
+<link rel="icon" type="image/png" href="/static/favicon.png">
+<style>
+:root{--ink:#1d2b2e;--muted:#5d6f72;--line:#d9e2e3;--bg:#f4f7f7;--panel:#fff;--brand:#0f5d5e;--brand-ink:#fff;
+--new:#9a5b00;--new-bg:#fff0d6;--read:#24557a;--read-bg:#e1eefa;--replied:#1d6b3a;--replied-bg:#ddf3e4;
+--closed:#4b5557;--closed-bg:#e8ecec;--archived:#6b5a7a;--archived-bg:#eee8f4;--danger:#a3261f}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--brand)}
+header.top{background:var(--brand);color:var(--brand-ink);padding:.75rem 1.25rem;display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+header.top a{color:var(--brand-ink);text-decoration:none;font-weight:600}
+header.top form{margin:0;display:flex;gap:.75rem;align-items:center;font-size:.9rem}
+main{max-width:1100px;margin:0 auto;padding:1.25rem}
+h1{font-size:1.4rem;margin:.2rem 0 1rem}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:1rem}
+.stats{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:.6rem .9rem;min-width:7.5rem}
+.stat b{display:block;font-size:1.5rem;line-height:1.2}
+.stat span{color:var(--muted);font-size:.85rem}
+form.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;align-items:end;margin-bottom:1rem}
+label{font-size:.85rem;color:var(--muted);display:block}
+input,select,textarea,button{font:inherit}
+input,select,textarea{width:100%;padding:.45rem .55rem;border:1px solid #b9c7c8;border-radius:4px;background:#fff;color:var(--ink)}
+button,.btn{background:var(--brand);color:#fff;border:0;border-radius:4px;padding:.5rem .9rem;cursor:pointer;text-decoration:none;display:inline-block;font-size:.95rem}
+button.secondary,.btn.secondary{background:#fff;color:var(--brand);border:1px solid var(--brand)}
+button.danger{background:var(--danger)}
+:focus-visible{outline:3px solid #f2b134;outline-offset:2px}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.85rem;color:var(--muted);font-weight:600}
+td.preview{color:var(--muted)}
+.badge{display:inline-block;padding:.1rem .55rem;border-radius:999px;font-size:.8rem;font-weight:600}
+.s-new{background:var(--new-bg);color:var(--new)}.s-read{background:var(--read-bg);color:var(--read)}
+.s-replied{background:var(--replied-bg);color:var(--replied)}.s-closed{background:var(--closed-bg);color:var(--closed)}
+.s-archived{background:var(--archived-bg);color:var(--archived)}
+.pager{display:flex;gap:.75rem;align-items:center;justify-content:space-between;margin-top:1rem;flex-wrap:wrap}
+.flash{background:var(--replied-bg);color:var(--replied);padding:.5rem .8rem;border-radius:4px;margin-bottom:1rem}
+.error{background:#fde8e6;color:var(--danger);padding:.5rem .8rem;border-radius:4px;margin-bottom:1rem}
+dl{display:grid;grid-template-columns:11rem 1fr;gap:.4rem 1rem;margin:0}
+dt{color:var(--muted)}dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:760px){.row{grid-template-columns:1fr}dl{grid-template-columns:1fr}th.hide,td.hide{display:none}}
+.table-wrap{overflow-x:auto}
+.actions{display:flex;gap:.6rem;margin-top:.8rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header class="top">
+  <a href="/admin">BFBF admin</a>
+  {% if user %}
+  <form method="post" action="/admin/logout">
+    <span>{{ user.email }}</span>
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <button class="secondary" type="submit">Log out</button>
+  </form>
+  {% endif %}
+</header>
+<main>{% block content %}{% endblock %}</main>
+</body>
+</html>

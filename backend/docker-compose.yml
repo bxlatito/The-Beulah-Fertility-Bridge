@@ -1,0 +1,41 @@
+# Local stack: API + PostgreSQL + MailHog (captures outgoing email, nothing leaves your machine).
+# Copy .env.example to .env and set POSTGRES_PASSWORD, SECRET_KEY, ADMIN_EMAIL, ADMIN_PASSWORD_INIT.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-bfbf}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-bfbf}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bfbf}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"   # web UI to view captured email
+
+  api:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-bfbf}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-bfbf}
+      EMAIL_BACKEND: smtp
+      SMTP_HOST: mailhog
+      SMTP_PORT: "1025"
+      SMTP_STARTTLS: "false"
+      SMTP_USERNAME: ""
+      SMTP_FROM: noreply@localhost
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+volumes:
+  pgdata:

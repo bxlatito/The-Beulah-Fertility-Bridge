@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Submission{% endblock %}
+{% block content %}
+<p><a href="/admin">&larr; Back to submissions</a></p>
+{% if not item %}
+  <div class="panel"><h1>Submission not found</h1><p>It may have been deleted.</p></div>
+{% else %}
+  <h1>{{ item.kind|capitalize }} · {{ item.id }}</h1>
+  {% if msg %}<div class="flash" role="status">{{ msg }}</div>{% endif %}
+  <div class="row">
+    <div class="panel">
+      <dl>
+        <dt>Status</dt><dd><span class="badge s-{{ item.status }}">{{ item.status|capitalize }}</span></dd>
+        <dt>Received</dt><dd>{{ item.created_at.strftime('%d %b %Y %H:%M') }} UTC</dd>
+        <dt>Consent given</dt><dd>{{ 'Yes' if item.consent else 'No' }} ({{ item.consent_at.strftime('%d %b %Y %H:%M') }} UTC)</dd>
+        {% for k, v in item.fields.items() %}
+          <dt>{{ k|replace('_', ' ')|capitalize }}</dt>
+          <dd>{% if v is none or v == '' or v == [] %}—{% elif v is iterable and v is not string %}{{ v|join(', ') }}{% else %}{{ v }}{% endif %}</dd>
+        {% endfor %}
+      </dl>
+    </div>
+    <div>
+      <form class="panel" method="post" action="/admin/s/{{ item.id }}/status">
+        <input type="hidden" name="csrf" value="{{ csrf }}">
+        <p><label for="status">Status</label>
+          <select id="status" name="status">{% for s in statuses %}<option value="{{ s }}" {{ 'selected' if s == item.status }}>{{ s|capitalize }}</option>{% endfor %}</select></p>
+        <p><label for="note">Internal note (never shown to the sender)</label>
+          <textarea id="note" name="note" rows="6" maxlength="2000">{{ item.admin_note or '' }}</textarea></p>
+        <button type="submit">Save changes</button>
+      </form>
+      <form class="panel" style="margin-top:1rem" method="post" action="/admin/s/{{ item.id }}/delete"
+            onsubmit="return confirm('Permanently delete this submission? This cannot be undone.')">
+        <input type="hidden" name="csrf" value="{{ csrf }}">
+        <p style="margin-top:0">Deleting removes the record permanently (right to erasure).</p>
+        <button class="danger" type="submit">Delete submission</button>
+      </form>
+    </div>
+  </div>
+{% endif %}
+{% endblock %}

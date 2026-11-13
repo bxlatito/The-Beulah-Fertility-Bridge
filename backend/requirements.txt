@@ -1,0 +1,15 @@
+# Runtime dependencies (pinned versions verified with Python 3.12)
+# Note: uvicorn[standard], pydantic[email] extras pull in extra packages automatically.
+fastapi==0.162.5
+uvicorn[standard]==0.54.0
+SQLAlchemy[asyncio]==2.1.8
+aiosqlite==0.22.1
+asyncpg==0.32.0
+alembic==1.20.1
+pydantic[email]==2.14.3
+email-validator==2.3.0
+pydantic-settings==2.16.2
+bcrypt==5.0.0
+PyJWT==2.15.1
+Jinja2==3.1.6
+python-multipart==0.0.33
