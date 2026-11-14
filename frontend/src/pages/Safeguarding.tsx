@@ -50,7 +50,7 @@ const sections: Section[] = [
       {
         type: "ul",
         items: [
-          "If you are worried about someone, email beulahfertilitybridge@gmail.com with what you have seen or heard. We will acknowledge it within 5 working days, record it securely and act on it.",
+          "If you are worried about someone, email info@beulahfertilitybridge.com with what you have seen or heard. We will acknowledge it within 5 working days, record it securely and act on it.",
           "If someone is in immediate danger, contact the police or local emergency services first: 112 (local emergency number).",
           "Where needed we will refer to the appropriate authorities.",
         ],

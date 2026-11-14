@@ -88,7 +88,7 @@ const sections: Section[] = [
         type: "ul",
         items: [
           "Under the Nigeria Data Protection Act 2023 you can ask to see, correct or delete your information, object to how we use it, or withdraw consent at any time.",
-          "Email beulahfertilitybridge@gmail.com and we will respond within 5 working days.",
+          "Email info@beulahfertilitybridge.com and we will respond within 5 working days.",
           "You may also complain to the Nigeria Data Protection Commission.",
         ],
       },

@@ -18,7 +18,7 @@ function Footer() {
 
             <div className="flex flex-col justify-center items-center gap-5 text-white">
                 <p className="text-[#8F6C54]">GET IN TOUCH</p>
-                <p>beulahfertilitybridge@gmail.com</p>
+                <p>info@beulahfertilitybridge.com</p>
                 <p className='hover:text-[#8F6C54] w-fit text-white text-sm'><Link to='/contact'>contact form</Link></p>
             </div>
 

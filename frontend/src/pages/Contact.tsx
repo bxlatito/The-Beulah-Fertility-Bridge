@@ -124,7 +124,7 @@ function Contact() {
                 <div>
                   <h3 className="text-xs text-[#8F6C54] mb-1">EMAIL</h3>
                   <p className=" text-sm sm:text-base">
-                    beulahfertilitybridge@gmail.com
+                    info@beulahfertilitybridge.com
                   </p>
                 </div>
 

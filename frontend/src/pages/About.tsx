@@ -399,8 +399,8 @@ function About() {
 
                 <div className="border-l-2 border-[#79563F] pl-5 mt-10 space-y-5">
                   <p className="text-sm">
-                    <a href="mailto:beulahfertilitybridge@gmail.com">
-                      Email: beulahfertilitybridge@gmail.com
+                    <a href="mailto:info@beulahfertilitybridge.com">
+                      Email: info@beulahfertilitybridge.com
                     </a>
                   </p>
 
