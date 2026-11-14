@@ -7,6 +7,7 @@ import embryo from "../assets/embryo.jpg";
 import adoption from "../assets/adoption.jpg";
 import pregnancy from "../assets/pregnancy.jpg";
 import sunset from "../assets/sunset.jpg";
+import Seo from "../components/Seo";
 
 function Learn() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -89,8 +90,7 @@ function Learn() {
     },
     {
       title: "Alternative paths to parenthood",
-      description:
-        "Adoption, fostering and other ways of building a family.",
+      description: "Adoption, fostering and other ways of building a family.",
       image: adoption,
       link: "https://www.gov.uk/adoption",
     },
@@ -116,9 +116,13 @@ function Learn() {
 
   return (
     <>
+      <Seo
+        title="Learn About Fertility | Beulah Fertility Bridge Foundation"
+        description="Fertility education and resources from the Beulah Fertility Bridge Foundation."
+        path="/learn"
+      />
       {/* NAVBAR AND HERO */}
       <div className="relative mt-17">
-
         <section className="relative h-80 sm:h-100 md:h-115 lg:h-125 bg-[#39332D] flex flex-col justify-center items-center text-center px-5">
           {/* HERO IMAGE PLACEHOLDER - ADD YOUR IMAGE HERE */}
           <div className="absolute inset-0 bg-[#39332D]">
@@ -152,9 +156,7 @@ function Learn() {
       <section className="bg-[#F8F8F8] px-5 md:px-12 lg:px-20 py-12 md:py-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
-            <h2 className="text-xl md:text-2xl ">
-              Find what you need...
-            </h2>
+            <h2 className="text-xl md:text-2xl ">Find what you need...</h2>
 
             <p className="mt-5 text-sm text-gray-700">
               Start anywhere. Each topic is written in plain language.
@@ -186,12 +188,12 @@ function Learn() {
                 onClick={() => navigateToSection(item.id)}
                 className="w-full flex gap-4 items-start py-4 border-b border-[#8F6C54] text-left hover:bg-[#F0E8E3] transition px-2"
               >
-                <span className="mt-1" aria-hidden="true">•</span>
+                <span className="mt-1" aria-hidden="true">
+                  •
+                </span>
 
                 <div>
-                  <h3 className=" text-sm text-[#62422C]">
-                    {item.title}
-                  </h3>
+                  <h3 className=" text-sm text-[#62422C]">{item.title}</h3>
 
                   <p className="text-xs text-gray-600 mt-1">
                     {item.description}
@@ -255,9 +257,7 @@ function Learn() {
         {/* DESKTOP SIDEBAR */}
         <aside className="hidden lg:block w-56 shrink-0 bg-[#F0E8E3]">
           <div className="sticky top-24 px-6 py-20">
-            <h3 className="text-sm  mb-5 text-[#62422C]">
-              On This Page
-            </h3>
+            <h3 className="text-sm  mb-5 text-[#62422C]">On This Page</h3>
 
             <nav className="flex flex-col gap-4 border-l border-[#8F6C54] pl-3 text-sm">
               {sections.map((section) => (
@@ -409,9 +409,7 @@ function Learn() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
               <div className="flex flex-col justify-center">
-                <h3 className="">
-                  Clearing up common misconceptions
-                </h3>
+                <h3 className="">Clearing up common misconceptions</h3>
 
                 <p className="text-sm text-gray-700 mt-3">
                   There is a lot of information surrounding fertility. Let's
@@ -526,7 +524,6 @@ function Learn() {
           </section>
         </main>
       </div>
-
     </>
   );
 }

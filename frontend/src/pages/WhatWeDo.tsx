@@ -6,6 +6,7 @@ import hand_to_sun from "../assets/hand_to_sun.jpg";
 import community from "../assets/community.jpg";
 import business_meeting from "../assets/business_meeting.jpg";
 import conversation from "../assets/conversation.jpg";
+import Seo from "../components/Seo";
 
 function WhatWeDo() {
   const services = [
@@ -90,11 +91,14 @@ function WhatWeDo() {
 
   return (
     <>
+      <Seo
+        title="What We Do | Beulah Fertility Bridge Foundation"
+        description="How the Beulah Fertility Bridge Foundation provides fertility education, faith-based support and community."
+        path="/what-we-do"
+      />
       {/* NAVBAR AND HERO */}
       <div className="relative mt-17">
-
         <section className="relative h-80 sm:h-100 md:h-115 lg:h-125 flex items-center justify-center text-center px-5">
-
           {/* HERO IMAGE */}
           <div className="absolute inset-0">
             <img
@@ -107,41 +111,32 @@ function WhatWeDo() {
           <div className="absolute inset-0 bg-black/40" />
 
           <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-
-
-
             <div className="hidden sm:block h-12" />
 
             <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-normal">
               How we can help you
             </h1>
-
           </div>
         </section>
       </div>
 
       {/* INTRODUCTION */}
       <section className="bg-[#F8F8F8] px-5 py-14 md:py-20">
-
         <p className="max-w-4xl mx-auto text-center text-base md:text-lg leading-7 text-black font-normal">
-          We walk with individuals and couples facing infertility
-          through faith conversations, clear education, community
-          support and, as we grow, help with access to care.
+          We walk with individuals and couples facing infertility through faith
+          conversations, clear education, community support and, as we grow,
+          help with access to care.
         </p>
-
       </section>
 
       {/* OUR SERVICES */}
       <section className="bg-[#F8F8F8] px-5 md:px-10 lg:px-16 pb-16">
-
         <div className="max-w-6xl mx-auto flex flex-col gap-10 md:gap-14">
-
           {services.map((service, index) => (
             <div
               key={index}
               className="relative border-2 border-[#79563F] rounded-2xl p-5 md:p-8 lg:p-10"
             >
-
               {/* STATUS LABEL */}
               <span className="absolute top-4 right-5 md:top-5 md:right-6 bg-[#558B00] text-white text-[10px] font-normal rounded-full px-3 py-1">
                 Active
@@ -154,7 +149,6 @@ function WhatWeDo() {
                     : "md:flex-row"
                 } items-center gap-7 md:gap-12`}
               >
-
                 {/* SERVICE IMAGE */}
                 <img
                   src={service.image}
@@ -164,7 +158,6 @@ function WhatWeDo() {
 
                 {/* SERVICE INFORMATION */}
                 <div className="w-full md:flex-1 pt-5 md:pt-0">
-
                   <h2 className="text-xl md:text-2xl text-[#79563F] font-normal">
                     {service.title}
                   </h2>
@@ -174,7 +167,6 @@ function WhatWeDo() {
                   </p>
 
                   <ul className="mt-6 border-t border-[#79563F]">
-
                     {service.points.map((point, pointIndex) => (
                       <li
                         key={pointIndex}
@@ -184,7 +176,6 @@ function WhatWeDo() {
                         <span>{point}</span>
                       </li>
                     ))}
-
                   </ul>
 
                   <Link
@@ -193,30 +184,23 @@ function WhatWeDo() {
                   >
                     Get Started →
                   </Link>
-
                 </div>
-
               </div>
             </div>
           ))}
-
         </div>
       </section>
 
       {/* JOIN US */}
       <section className="bg-[#F0E8E3] px-5 md:px-12 lg:px-20 py-14 md:py-20">
-
         <div className="max-w-6xl mx-auto">
-
           <h2 className="text-2xl md:text-3xl text-center font-normal underline decoration-[#8F6C54] underline-offset-8">
             Join Us, We would love your support
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-14">
-
             {supporters.map((supporter, index) => (
               <div key={index}>
-
                 <h3 className="text-base md:text-lg font-normal border-b-2 border-[#79563F] pb-4">
                   {supporter.title}
                 </h3>
@@ -231,15 +215,11 @@ function WhatWeDo() {
                 >
                   Get Started →
                 </Link>
-
               </div>
             ))}
-
           </div>
-
         </div>
       </section>
-
     </>
   );
 }

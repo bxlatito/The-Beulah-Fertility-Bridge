@@ -5,6 +5,7 @@ import { useState, type FormEvent } from "react";
 import { postJson, ApiError, type FieldErrors } from "../lib/api";
 
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import Seo from "../components/Seo";
 
 function About() {
   const [loading, setLoading] = useState(false);
@@ -99,6 +100,11 @@ function About() {
 
   return (
     <>
+      <Seo
+        title="About Us | Beulah Fertility Bridge Foundation"
+        description="Learn about the Beulah Fertility Bridge Foundation, our mission, our team and how we support people on their fertility journey."
+        path="/about"
+      />
       {/* NAVBAR AND HERO */}
       <div className="relative mt-17">
         <section className="relative h-80 sm:h-100 md:h-115 lg:h-125 flex items-center justify-center text-center px-5">

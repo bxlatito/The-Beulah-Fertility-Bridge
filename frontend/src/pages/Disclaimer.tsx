@@ -1,4 +1,5 @@
 import law from "../assets/law.jpg";
+import Seo from "../components/Seo";
 import PolicyLayout, { type Section } from "./PolicyLayout";
 
 const sections: Section[] = [
@@ -92,28 +93,34 @@ const sections: Section[] = [
 
 function Disclaimer() {
   return (
-    <PolicyLayout
-      heroImage={law}
-      title="Disclaimer"
-      subtitle="What our information is, and what it is not. Last updated: Dec 2026"
-      sections={sections}
-      related={[
-        {
-          title: "Privacy notice",
-          description:
-            "How we collect, use and protect your information.",
-          label: "Read privacy notice",
-          href: "/privacy-notice",
-        },
-        {
-          title: "Safeguarding",
-          description:
-            "Our commitment to the safety and dignity of everyone we serve.",
-          label: "Read safeguarding",
-          href: "/safeguarding",
-        },
-      ]}
-    />
+    <>
+      <Seo
+        title="Disclaimer | Beulah Fertility Bridge Foundation"
+        description="Important information about the educational nature of the content on this website."
+        path="/disclaimer"
+      />
+      <PolicyLayout
+        heroImage={law}
+        title="Disclaimer"
+        subtitle="What our information is, and what it is not. Last updated: Dec 2026"
+        sections={sections}
+        related={[
+          {
+            title: "Privacy notice",
+            description: "How we collect, use and protect your information.",
+            label: "Read privacy notice",
+            href: "/privacy-notice",
+          },
+          {
+            title: "Safeguarding",
+            description:
+              "Our commitment to the safety and dignity of everyone we serve.",
+            label: "Read safeguarding",
+            href: "/safeguarding",
+          },
+        ]}
+      />
+    </>
   );
 }
 

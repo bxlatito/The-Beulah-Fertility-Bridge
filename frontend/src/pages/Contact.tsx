@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import writing from "../assets/writing.jpg";
 import { Link } from "react-router-dom";
 import { postJson, ApiError, type FieldErrors } from "../lib/api";
+import Seo from "../components/Seo";
 
 function Contact() {
   const inputStyle =
@@ -68,15 +69,13 @@ function Contact() {
     },
     {
       title: "Healthcare professionals",
-      description:
-        "Partner with us on responsible, evidence-based education.",
+      description: "Partner with us on responsible, evidence-based education.",
       link: "/get-involved",
       linkText: "Get Involved",
     },
     {
       title: "Volunteers and donors",
-      description:
-        "Lend your time, skills or prayers, or help fund this work.",
+      description: "Lend your time, skills or prayers, or help fund this work.",
       link: "/get-involved",
       linkText: "Get Involved",
     },
@@ -84,6 +83,11 @@ function Contact() {
 
   return (
     <>
+      <Seo
+        title="Contact Us | Beulah Fertility Bridge Foundation"
+        description="Get in touch with the Beulah Fertility Bridge Foundation. We respond within 5 working days."
+        path="/contact"
+      />
       <main className="mt-17 bg-[#F7F7F7] text-black">
         {/* Hero Section */}
         <section className="relative w-full h-70 sm:h-80 md:h-85">
@@ -94,12 +98,11 @@ function Contact() {
           />
 
           <div className="absolute inset-0 bg-black/55 flex flex-col justify-center items-center text-center px-5">
-            <h1 className="text-white text-4xl sm:text-5xl mb-4">
-              Contact us
-            </h1>
+            <h1 className="text-white text-4xl sm:text-5xl mb-4">Contact us</h1>
 
             <p className="text-white text-base sm:text-lg ">
-              Questions, ideas or a kind word. We would be glad to hear from you.
+              Questions, ideas or a kind word. We would be glad to hear from
+              you.
             </p>
           </div>
         </section>
@@ -138,8 +141,8 @@ function Contact() {
                 <div>
                   <h3 className="text-xs text-[#8F6C54] mb-1">RESPONSE TIME</h3>
                   <p className=" text-sm sm:text-base">
-                    We aim to reply within 5 Working days. Every message is
-                    read by a member of the BFBF team.
+                    We aim to reply within 5 Working days. Every message is read
+                    by a member of the BFBF team.
                   </p>
                 </div>
 
@@ -173,9 +176,7 @@ function Contact() {
 
             {/* Right Column - Contact Form */}
             <div className="border-[3px] border-black rounded-3xl p-5 sm:p-6">
-              <h2 className="text-xl text-[#62422C] mb-3">
-                Send us a message
-              </h2>
+              <h2 className="text-xl text-[#62422C] mb-3">Send us a message</h2>
 
               <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
                 <input
@@ -320,8 +321,8 @@ function Contact() {
 
               <p className="text-sm ">
                 This form is not monitored for urgent health concerns. If you
-                need urgent medical help, go to your nearest hospital. BFBF
-                does not provide medical advice or diagnosis.
+                need urgent medical help, go to your nearest hospital. BFBF does
+                not provide medical advice or diagnosis.
               </p>
             </div>
           </section>

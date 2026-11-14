@@ -4,6 +4,7 @@ import { postJson, ApiError, type FieldErrors } from "../lib/api";
 import handshake from "../assets/handshake.jpg";
 import worship from "../assets/worship.jpg";
 import hand_heart from "../assets/holding_heart.jpg";
+import Seo from "../components/Seo";
 
 function GetInvolved() {
   const [loading, setLoading] = useState(false);
@@ -89,6 +90,11 @@ function GetInvolved() {
 
   return (
     <>
+      <Seo
+        title="Get Involved | Beulah Fertility Bridge Foundation"
+        description="Volunteer or partner with the Beulah Fertility Bridge Foundation."
+        path="/get-involved"
+      />
       {/* NAVBAR AND HERO */}
       <div className="relative mt-17">
         <section className="relative h-80 sm:h-100 md:h-115 lg:h-125 flex items-center justify-center px-5">

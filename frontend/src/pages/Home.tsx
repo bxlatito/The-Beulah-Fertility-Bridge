@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { FaHeart, FaUsers, FaBookOpen } from "react-icons/fa";
 import tobi from "../assets/Tobi_photo.jpeg";
 import bible from "../assets/bible.jpg";
+import Seo from "../components/Seo";
 
 function Home() {
   const buttonStyle =
@@ -17,6 +18,11 @@ function Home() {
 
   return (
     <>
+      <Seo
+        title="Beulah Fertility Bridge Foundation | Faith and Fertility Support in Nigeria"
+        description="Faith-based fertility education, support and community for couples and individuals in Nigeria."
+        path="/"
+      />
 
       {/* HERO SECTION */}
       <div className="relative mt-17">
@@ -124,9 +130,7 @@ function Home() {
           />
 
           <div className="w-full min-h-70.5 bg-[#EEE6E2] px-5 py-8 flex flex-col items-center text-[#62422C] gap-5">
-            <p className="text-center text-lg">
-              For Medical Professionals
-            </p>
+            <p className="text-center text-lg">For Medical Professionals</p>
 
             <p className="text-center flex-1">
               Partner with us on responsible, evidence-based education and on
@@ -170,9 +174,9 @@ function Home() {
       </div>
 
       {/* UNDERSTAND YOUR JOURNEY */}
-      <h1 className="text-center text-3xl md:text-4xl mt-20 px-4">
+      <h2 className="text-center text-3xl md:text-4xl mt-20 px-4">
         Understand Your Journey
-      </h1>
+      </h2>
 
       <div className="flex flex-col md:flex-row flex-wrap justify-center items-stretch gap-8 md:gap-12 mx-5 mt-10">
         {/* INFERTILITY */}
@@ -221,9 +225,7 @@ function Home() {
         {/* CAUSES */}
         <div className="w-full sm:w-85.5 max-w-full">
           <div className="w-full h-101 bg-[#EEE6E2] px-5 flex flex-col items-center gap-5 text-[#62422C] py-10 rounded-4xl">
-            <p className="text-center text-lg">
-              What Can Cause Infertility?
-            </p>
+            <p className="text-center text-lg">What Can Cause Infertility?</p>
 
             <p className="text-center">
               Infertility can be caused by a range of factors, including:
@@ -246,9 +248,9 @@ function Home() {
       </div>
 
       {/* FAITH SECTION */}
-      <h1 className="text-center text-4xl md:text-6xl mt-20 md:mt-30 px-4">
+      <h2 className="text-center text-4xl md:text-6xl mt-20 md:mt-30 px-4">
         Your Faith <span className="text-[#8F6C54]">Matters</span>
-      </h1>
+      </h2>
 
       <p className="text-center text-lg md:text-2xl w-11/12 md:w-8/12 mx-auto mt-10">
         Exploring fertility care does not mean a lack of faith. Many people
@@ -295,9 +297,7 @@ function Home() {
         </div>
 
         <div className="flex flex-col justify-center items-center px-2 md:px-10 gap-7 md:gap-10 text-center w-full md:w-1/2 mt-8 md:mt-0">
-          <p className="text-2xl md:text-3xl">
-            A Message From The Founder
-          </p>
+          <p className="text-2xl md:text-3xl">A Message From The Founder</p>
 
           <p>
             Through my journey in reproductive science and my walk with God, I
@@ -331,9 +331,9 @@ function Home() {
         />
 
         <div className="relative z-10 min-h-170 bg-black/50 flex flex-col gap-5 justify-start items-start text-left px-5 md:px-10 pb-10">
-          <h1 className="text-white text-3xl md:text-5xl w-full md:w-8/12 pt-10 md:pt-15">
+          <h2 className="text-white text-3xl md:text-5xl w-full md:w-8/12 pt-10 md:pt-15">
             Be Part Of The Journey
-          </h1>
+          </h2>
 
           <p className="text-white w-full md:w-8/12 pt-3 md:pt-7 text-sm md:text-lg">
             This vision cannot grow alone. It needs people willing to pray,
@@ -399,7 +399,6 @@ function Home() {
           </div>
         </div>
       </div>
-
     </>
   );
 }

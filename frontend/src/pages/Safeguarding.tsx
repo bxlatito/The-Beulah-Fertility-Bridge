@@ -1,4 +1,5 @@
 import law from "../assets/law.jpg";
+import Seo from "../components/Seo";
 import PolicyLayout, { type Section } from "./PolicyLayout";
 
 const sections: Section[] = [
@@ -87,27 +88,33 @@ const sections: Section[] = [
 
 function Safeguarding() {
   return (
-    <PolicyLayout
-      heroImage={law}
-      title="Safeguarding"
-      subtitle="Our commitment to the safety and dignity of everyone we serve. Last reviewed: Dec 2026"
-      sections={sections}
-      related={[
-        {
-          title: "Privacy notice",
-          description:
-            "How we collect, use and protect your information.",
-          label: "Read privacy notice",
-          href: "/privacy-notice",
-        },
-        {
-          title: "Disclaimer",
-          description: "What our information is, and what it is not.",
-          label: "Read disclaimer",
-          href: "/disclaimer",
-        },
-      ]}
-    />
+    <>
+      <Seo
+        title="Safeguarding | Beulah Fertility Bridge Foundation"
+        description="Our commitment to the safety and dignity of everyone we serve."
+        path="/safeguarding"
+      />
+      <PolicyLayout
+        heroImage={law}
+        title="Safeguarding"
+        subtitle="Our commitment to the safety and dignity of everyone we serve. Last reviewed: Dec 2026"
+        sections={sections}
+        related={[
+          {
+            title: "Privacy notice",
+            description: "How we collect, use and protect your information.",
+            label: "Read privacy notice",
+            href: "/privacy-notice",
+          },
+          {
+            title: "Disclaimer",
+            description: "What our information is, and what it is not.",
+            label: "Read disclaimer",
+            href: "/disclaimer",
+          },
+        ]}
+      />
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import law from "../assets/law.jpg";
+import Seo from "../components/Seo";
 import PolicyLayout, { type Section } from "./PolicyLayout";
 
 const sections: Section[] = [
@@ -11,7 +12,6 @@ const sections: Section[] = [
         type: "p",
         text: "Beulah Fertility Bridge Foundation (BFBF) is a Christ-centred nonprofit initiative. This notice explains how we handle personal information when you use this website, contact us or ask for support.",
       },
-
     ],
   },
   {
@@ -98,27 +98,34 @@ const sections: Section[] = [
 
 function PrivacyNotice() {
   return (
-    <PolicyLayout
-      heroImage={law}
-      title="Privacy notice"
-      subtitle="How we collect, use and protect your information. Last updated: Dec 2026"
-      sections={sections}
-      related={[
-        {
-          title: "Safeguarding",
-          description:
-            "Our commitment to the safety and dignity of everyone we serve.",
-          label: "Read safeguarding",
-          href: "/safeguarding",
-        },
-        {
-          title: "Disclaimer",
-          description: "What our information is, and what it is not.",
-          label: "Read disclaimer",
-          href: "/disclaimer",
-        },
-      ]}
-    />
+    <>
+      <Seo
+        title="Privacy Notice | Beulah Fertility Bridge Foundation"
+        description="How the Beulah Fertility Bridge Foundation collects, uses and protects your personal information."
+        path="/privacy-notice"
+      />
+      <PolicyLayout
+        heroImage={law}
+        title="Privacy notice"
+        subtitle="How we collect, use and protect your information. Last updated: Dec 2026"
+        sections={sections}
+        related={[
+          {
+            title: "Safeguarding",
+            description:
+              "Our commitment to the safety and dignity of everyone we serve.",
+            label: "Read safeguarding",
+            href: "/safeguarding",
+          },
+          {
+            title: "Disclaimer",
+            description: "What our information is, and what it is not.",
+            label: "Read disclaimer",
+            href: "/disclaimer",
+          },
+        ]}
+      />
+    </>
   );
 }
 

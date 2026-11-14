@@ -14,6 +14,8 @@ import Learn from './pages/Learn.tsx'
 import PrivacyNotice from './pages/PrivacyNotice.tsx'
 import Safeguarding from './pages/Safeguarding.tsx'
 import WhatWeDo from './pages/WhatWeDo.tsx'
+import { HelmetProvider } from 'react-helmet-async'
+
 
 
 const router = createBrowserRouter([
@@ -39,6 +41,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
 <StrictMode>
-  <RouterProvider router={router} />
+  <HelmetProvider>
+    <RouterProvider router={router} />
+  </HelmetProvider>
 </StrictMode>,
 )
