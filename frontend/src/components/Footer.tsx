@@ -39,11 +39,11 @@ function Footer() {
                     <FaInstagram className="text-3xl hover:text-[#8F6C54] text-white" />
                 </a>
 
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/share/1AQPfjXRHn/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
                     <FaFacebook className="text-3xl hover:text-[#8F6C54] text-white" />
                 </a>
 
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/company/beulah-fertility-bridge-foundation/" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin className="text-3xl hover:text-[#8F6C54] text-white" />
                 </a>
 

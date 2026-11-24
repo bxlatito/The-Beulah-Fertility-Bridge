@@ -4,7 +4,7 @@ import family_sihlouette from "../assets/family_sihlouette.jpg";
 import { useState, type FormEvent } from "react";
 import { postJson, ApiError, type FieldErrors } from "../lib/api";
 
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Seo from "../components/Seo";
 
 function About() {
@@ -411,19 +411,27 @@ function About() {
                   </p>
 
                   <a
-                    href="#"
+                    href="https://www.instagram.com/beulahfertilitybridge/"
                     className="flex items-center gap-2 text-sm hover:text-[#8F6C54]"
                   >
                     <FaInstagram className="text-[#E1306C]" />
-                    @beulahfertilitybridge
+                    Check us out on Instagram!
                   </a>
 
                   <a
-                    href="#"
+                    href="https://www.facebook.com/share/1AQPfjXRHn/?mibextid=wwXIfr"
+                    className="flex items-center gap-2 text-sm hover:text-[#8F6C54]"
+                  >
+                    <FaFacebook className="text-[#E1306C]" />
+                    Check us out on Facebook!
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/company/beulah-fertility-bridge-foundation/"
                     className="flex items-center gap-2 text-sm hover:text-[#8F6C54]"
                   >
                     <FaLinkedin className="text-[#0A66C2]" />
-                    @beulahfertilitybridge
+                    Check us out on LinkedIn!
                   </a>
                 </div>
               </div>
